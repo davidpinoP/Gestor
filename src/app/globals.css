@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-950: #0a0a0b;
+  --color-ink-900: #111214;
+  --color-ink-850: #16171a;
+  --color-ink-800: #1b1c20;
+  --color-ink-700: #26282d;
+  --color-ink-600: #34363c;
+  --color-ink-500: #4a4d55;
+  --color-fg: #ececee;
+  --color-fg-muted: #a1a3aa;
+  --color-fg-subtle: #6f727a;
+  --color-gold: #c8a96a;
+  --color-gold-strong: #b08a3a;
+  --color-gold-soft: #c8a96a1f;
+  --color-series-income: #b08a3a;
+  --color-series-expense: #5a86e0;
+  --color-good: #4fb286;
+  --color-warn: #d9a441;
+  --color-bad: #e0645a;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), ui-serif, Georgia, serif;
+  --animate-fade-in: fade-in 0.35s ease-out both;
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: none; }
+  }
+}
+
+:root { color-scheme: dark; }
+
+html, body {
+  background: var(--color-ink-950);
+  color: var(--color-fg);
+}
+
+body {
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+}
+
+.num { font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+
+::selection { background: #c8a96a40; }
+
+input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.7); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
